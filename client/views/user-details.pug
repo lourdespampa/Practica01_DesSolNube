@@ -1,0 +1,24 @@
+extends layout
+block content
+	a.button(href='/') Home
+	hr
+	.row
+		//- .six.columns
+		//- 	figure
+		//- 		img(src=data.imageUrl)
+		.six.columns
+			table
+				tr
+					th Descripcion
+					td=data.descripcion
+				tr
+					th Precio
+					td=data.precio
+				tr
+					th Stock
+					td=data.stock
+				tr
+					th 
+						a.button(href='/edit/' + data._id) Editar
+					th
+						a.button(href='/delete/' + data._id + "?_method=DELETE") Borrar

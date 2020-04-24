@@ -1,0 +1,22 @@
+extends layout
+block content
+	a.button(href='/') Home
+	hr
+	h1 Lista de Articulos.
+	table
+		tr
+			th Articulo
+			th ID
+			th 
+		-for(var i = 0; i < data.length; i++){
+			tr
+				td #{data[i].descripcion} 
+				td #{data[i]._id}
+				td
+					a.button(href='/user/' + data[i]._id) Ver detalles
+		-}
+	form(action="/create" method="post")
+		input(type="text" name="descripcion" placeholder="Descripcion")
+		input(type="Number" name="precio" placeholder="Precio") 
+		input(type="Number" name="stock" placeholder="Stock")
+		input(type="submit", value="Agregar articulo")

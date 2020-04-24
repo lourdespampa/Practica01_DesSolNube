@@ -1,0 +1,11 @@
+extends layout 
+block content
+	a.button(href='/') Home
+	hr
+	h1 Editar
+	form(action='/edit/' + data._id, method='POST')
+		input(type='hidden', name='_method', value='PUT')
+		input(type='text', name='descripcion', value=data.descripcion)
+		input(type='text', name='precio', value=data.precio)
+		input(type='text', name='stock', value=data.stock)
+		input(type='submit', value='Guardar Cambios')
